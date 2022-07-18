@@ -46,3 +46,48 @@ npm config set strict-ssl false
 npm update npm –g
 npm config set strict-ssl true
 ```
+
+## Creating an npm package with declaration and source maps
+```
+npm init -y
+npm i typescript -D
+npx tsc --init --rootDir src --outDir lib --sourceMap --declaration --declarationMap
+```
+
+add a function inside the typescript project ts file
+
+now we will do some changes to the package.json file
+
+```
+"main" : lib
+"types" : lib
+"scripts": {"build":"tsc"}
+
+run npm run build
+```
+
+publish to npm
+```
+npm publish
+```
+
+To consume the package
+```
+npm i packagename
+
+import {functionname} from 'packagename';
+```
+
+To run tsc files directly we can use tsnode 
+install tsnode from npm
+```
+npm i ts-node
+npx ts-node src/index.ts
+```
+
+we can also add our frequently used commands to the script section in package.json
+```
+"scripts"{"start" : "ts-node src/index.ts"}
+
+npm start
+```
