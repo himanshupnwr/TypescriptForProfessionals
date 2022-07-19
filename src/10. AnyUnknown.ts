@@ -32,7 +32,7 @@ function loadNumber(): any{
     return 123.456;
 }
 
-function log(value:unknown)
+function logger(value:unknown)
 {
     if(typeof value == 'number')
     {
@@ -43,7 +43,7 @@ function log(value:unknown)
     }
 }
 
-log(123.456)
-log('Hello World')
+logger(123.456)
+logger('Hello World')
 
 //we can assign anything to any but when we use it we have to define a possible type

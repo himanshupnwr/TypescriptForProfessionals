@@ -6,14 +6,14 @@ direction = 'North';
 direction = 'East';
 //direction = 'adsdf'; gets error of trying to add any other value
 
-function move(distanceMetres: number, direction:CardinalDirection)
+function movedirection(distanceMetres: number, direction:CardinalDirection)
 {
     console.log(`Moving ${distanceMetres} towards ${direction}`);
 }
 
 type DiceValue = 1 | 2 | 3 | 4 | 5 | 6;
 
-function rollDice()
+function crollDice()
 {
     return (Math.floor(Math.random() * 6) + 1) as DiceValue; //type assestion to dice value
 }
