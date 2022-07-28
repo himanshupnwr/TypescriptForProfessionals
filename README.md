@@ -91,3 +91,28 @@ we can also add our frequently used commands to the script section in package.js
 
 npm start
 ```
+
+## Use Project References 
+
+Go to tsconfig of the project which we want to reference and make composite property as true under compiler options.
+
+Then go to the project in which we want to use reference. Go to tsconfig.json and add the code
+
+```
+"include": [
+    "src"
+],
+"references" : [
+    {"path": ".../example-lib/"} // example-lib is the project we want to reference
+]
+```
+
+also change the build script in package.json
+
+```
+"scripts"
+{
+    "build": "tsc --build",
+    //--build will also build the referenced project
+}
+```
